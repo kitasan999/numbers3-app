@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ナンバーズ3 傾向分析アプリ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>ナンバーズ3 傾向分析アプリ</h1>
+        <p class="data-info">
+            この分析は、2020年7月14日から2025年7月13日までのナンバーズ3の公開データに基づいています。<br>
+            データは私の学習済み情報から提供されており、リアルタイムの最新抽選結果は含まれません。
+        </p>
+
+        <div class="filter-controls">
+            <h2>期間選択</h2>
+            <button onclick="setAnalysisPeriod('all5years')">過去5年間全体</button>
+            <button onclick="setAnalysisPeriod('last1year')">過去1年間</button>
+            <button onclick="setAnalysisPeriod('last3months')">直近3ヶ月</button>
+            <button onclick="setAnalysisPeriod('2024')">2024年</button>
+            <button onclick="setAnalysisPeriod('2023')">2023年</button>
+            <button onclick="setAnalysisPeriod('2022')">2022年</button>
+            <button onclick="setAnalysisPeriod('2021')">2021年</button>
+            <button onclick="setAnalysisPeriod('2020')">2020年</button>
+            <p id="currentPeriodDisplay" class="current-period">現在の分析期間: 2020年7月14日 ～ 2025年7月13日</p>
+        </div>
+
+        <div class="controls">
+            <h2>分析項目</h2>
+            <button onclick="showAnalysis('numberFrequency')">数字の出現回数</button>
+            <button onclick="showAnalysis('combinationTrends')">数字の組み合わせ傾向</button>
+            <button onclick="showAnalysis('coldNumbers')">冷え数字</button>
+            <button onclick="showAnalysis('oddEvenRatio')">奇数／偶数パターン</button>
+            <button onclick="showAnalysis('sumDistribution')">合計値の分布</button>
+            <button onclick="showAnalysis('lastTwoDigits')">下二桁／桁別傾向</button>
+        </div>
+
+        <div id="analysisResult" class="analysis-result">
+            <p>分析期間を選択し、上記の分析項目ボタンをクリックして結果を表示してください。</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
